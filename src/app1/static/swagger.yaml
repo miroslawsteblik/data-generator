@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: Telemetry Server API
+  version: 1.0.0
+  description: A server for handling telemetry data.
+servers:
+  - url: http://localhost:5000
+paths:
+  /api/telemetry:
+    get:
+      summary: Retrieve all telemetry data
+      responses:
+        '200':
+          description: A list of telemetry data
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Telemetry'
+    post:
+      summary: Create new telemetry data
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Telemetry'
+      responses:
+        '200':
+          description: Telemetry data created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: "Telemetry data created"
+
+components:
+  schemas:
+    Telemetry:
+      type: object
+      properties:
+        timestamp:
+          type: number
+        temperature:
+          type: number
+        pressure:
+          type: number
+        humidity:
+          type: number
+        speed:
+          type: number
+        fuel_level:
+          type: number
+        engine_temperature:
+          type: number

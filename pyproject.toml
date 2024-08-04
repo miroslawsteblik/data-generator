@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=60.2.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "data_generator"
+version = "1.0.0"
+description = "Generates data and exposes via API endpoints"
+readme = "README.md"
+dependencies = [
+  "flask", 
+  "requests"
+
+
+]
+requires-python = ">=3.8"
+authors = [
+  {name = "Miroslaw Steblik", email = "miroslawsteblik@gmail.com"},
+]
+
+[project.urls]
+"Homepage" = "https://github.com/miroslawsteblik/D2Drive"

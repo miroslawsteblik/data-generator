@@ -1,0 +1,27 @@
+
+services:
+  app1:
+    container_name: flask_server
+    build:
+      context: .
+      dockerfile: Dockerfile.app1
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./src/app1:/app
+    environment:
+      - FLASK_ENV=development
+
+  app2:
+    container_name: data_generator
+    build:
+      context: .
+      dockerfile: Dockerfile.app2
+    ports:
+      - "5001:5000"
+    volumes:
+      - ./src/app2:/app
+    environment:
+      - FLASK_ENV=development
+    depends_on:
+      - app1
