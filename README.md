@@ -65,6 +65,16 @@ logging.basicConfig(level=logging.DEBUG)
 > app2 Telemetry Data Generator
  - Generates telemetry data and sends it to the app1 API server.
 
+### Troubleshooting
+If you encounter any issues, try the following steps:
+
+1. Ensure Docker and Docker Compose are installed and running.
+2. Rebuild the Docker container
+```
+docker-compose down
+docker-compose up --build
+```
+
  #### Getting Data from the API
 
  ```
